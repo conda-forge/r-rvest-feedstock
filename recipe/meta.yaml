@@ -1,5 +1,4 @@
 {% set version = '0.3.2' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +9,13 @@ package:
 source:
   fn: rvest_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/rvest_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/rvest/rvest_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/rvest_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/rvest/rvest_{{ version }}.tar.gz
   sha256: 0d6e8837fb1df79b1c83e7b48d8f1e6245f34a10c4bb6952e7bec7867e4abb12
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -23,6 +23,8 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-httr >=0.5
     - r-magrittr
@@ -37,7 +39,7 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('rvest')"  # [not win]
+    - $R -e "library('rvest')"           # [not win]
     - "\"%R%\" -e \"library('rvest')\""  # [win]
 
 about:
@@ -46,8 +48,14 @@ about:
   summary: Wrappers around the 'xml2' and 'httr' packages to make it easy to download, then manipulate,
     HTML and XML.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
