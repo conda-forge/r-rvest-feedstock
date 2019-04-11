@@ -1,4 +1,4 @@
-{% set version = '0.3.2' %}
+{% set version = '0.3.3' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,16 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: rvest_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/rvest_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rvest/rvest_{{ version }}.tar.gz
-  sha256: 0d6e8837fb1df79b1c83e7b48d8f1e6245f34a10c4bb6952e7bec7867e4abb12
+  sha256: b10a87fa2d733f7c0fc567242ef0ab10a1a77d58d51796996cc0fd81381a556f
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
-  number: 1001
+  number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -43,7 +42,7 @@ test:
     - "\"%R%\" -e \"library('rvest')\""  # [win]
 
 about:
-  home: https://github.com/hadley/rvest
+  home: http://rvest.tidyverse.org/, https://github.com/tidyverse/rvest
   license: GPL-3
   summary: Wrappers around the 'xml2' and 'httr' packages to make it easy to download, then manipulate,
     HTML and XML.
@@ -52,9 +51,27 @@ about:
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+    - conda-forge/r
+
+# Package: rvest
+# Title: Easily Harvest (Scrape) Web Pages
+# Version: 0.3.3
+# Authors@R:  c(person(given = "Hadley", family = "Wickham", role = c("aut", "cre"), email = "hadley@rstudio.com"), person(given = "RStudio", role = "cph"))
+# Description: Wrappers around the 'xml2' and 'httr' packages to make it easy to download, then manipulate, HTML and XML.
+# License: GPL-3
+# URL: http://rvest.tidyverse.org/, https://github.com/tidyverse/rvest
+# BugReports: https://github.com/tidyverse/rvest/issues
+# Depends: R (>= 3.1), xml2
+# Imports: httr (>= 0.5), magrittr, selectr
+# Suggests: covr, knitr, png, rmarkdown, spelling, stringi (>= 0.3.1), testthat
+# VignetteBuilder: knitr
+# Encoding: UTF-8
+# Language: en-US
+# LazyData: true
+# RoxygenNote: 6.1.1
+# NeedsCompilation: no
+# Packaged: 2019-03-29 21:47:17 UTC; hadley
+# Author: Hadley Wickham [aut, cre], RStudio [cph]
+# Maintainer: Hadley Wickham <hadley@rstudio.com>
+# Repository: CRAN
+# Date/Publication: 2019-04-11 07:22:44 UTC
