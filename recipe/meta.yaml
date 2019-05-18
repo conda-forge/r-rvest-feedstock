@@ -1,4 +1,4 @@
-{% set version = '0.3.3' %}
+{% set version = '0.3.4' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rvest_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rvest/rvest_{{ version }}.tar.gz
-  sha256: b10a87fa2d733f7c0fc567242ef0ab10a1a77d58d51796996cc0fd81381a556f
+  sha256: 413e171b9e89b7dc4e8b41165027cf19eb97cd73e149c252237bbdf0d0a4254a
 
 build:
   merge_build_host: True  # [win]
@@ -55,13 +55,13 @@ extra:
 
 # Package: rvest
 # Title: Easily Harvest (Scrape) Web Pages
-# Version: 0.3.3
+# Version: 0.3.4
 # Authors@R:  c(person(given = "Hadley", family = "Wickham", role = c("aut", "cre"), email = "hadley@rstudio.com"), person(given = "RStudio", role = "cph"))
 # Description: Wrappers around the 'xml2' and 'httr' packages to make it easy to download, then manipulate, HTML and XML.
 # License: GPL-3
 # URL: http://rvest.tidyverse.org/, https://github.com/tidyverse/rvest
 # BugReports: https://github.com/tidyverse/rvest/issues
-# Depends: R (>= 3.1), xml2
+# Depends: R (>= 3.2), xml2
 # Imports: httr (>= 0.5), magrittr, selectr
 # Suggests: covr, knitr, png, rmarkdown, spelling, stringi (>= 0.3.1), testthat
 # VignetteBuilder: knitr
@@ -70,8 +70,8 @@ extra:
 # LazyData: true
 # RoxygenNote: 6.1.1
 # NeedsCompilation: no
-# Packaged: 2019-03-29 21:47:17 UTC; hadley
+# Packaged: 2019-05-15 19:45:39 UTC; hadley
 # Author: Hadley Wickham [aut, cre], RStudio [cph]
 # Maintainer: Hadley Wickham <hadley@rstudio.com>
 # Repository: CRAN
-# Date/Publication: 2019-04-11 07:22:44 UTC
+# Date/Publication: 2019-05-15 20:10:30 UTC
