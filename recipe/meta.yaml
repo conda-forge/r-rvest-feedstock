@@ -1,4 +1,4 @@
-{% set version = '0.3.4' %}
+{% set version = "0.3.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rvest_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rvest/rvest_{{ version }}.tar.gz
-  sha256: 413e171b9e89b7dc4e8b41165027cf19eb97cd73e149c252237bbdf0d0a4254a
+  sha256: 0e7f41be4ce6501d7af50575a2532d4bfd9153ca57900ee62dbc27c0a22c0a64
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
