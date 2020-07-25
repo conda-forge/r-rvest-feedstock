@@ -1,4 +1,4 @@
-{% set version = "0.3.5" %}
+{% set version = "0.3.6" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/rvest_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/rvest/rvest_{{ version }}.tar.gz
-  sha256: 0e7f41be4ce6501d7af50575a2532d4bfd9153ca57900ee62dbc27c0a22c0a64
+  sha256: 6a2ee3a25d2d738031edbc1b5e2410f2a4538dfbb9705af145f9039504b902fa
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -44,10 +44,9 @@ test:
 about:
   home: http://rvest.tidyverse.org/, https://github.com/tidyverse/rvest
   license: GPL-3
-  summary: Wrappers around the 'xml2' and 'httr' packages to make it easy to download, then manipulate,
-    HTML and XML.
+  summary: Wrappers around the 'xml2' and 'httr' packages to make it easy to download, then manipulate, HTML and XML.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
