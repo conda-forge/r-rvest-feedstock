@@ -43,10 +43,11 @@ test:
 
 about:
   home: http://rvest.tidyverse.org/, https://github.com/tidyverse/rvest
-  license: GPL-3
+  license: GPL-3.0-only
   summary: Wrappers around the 'xml2' and 'httr' packages to make it easy to download, then manipulate, HTML and XML.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
