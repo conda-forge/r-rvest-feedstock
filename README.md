@@ -3,9 +3,9 @@ About r-rvest
 
 Home: http://rvest.tidyverse.org/, https://github.com/tidyverse/rvest
 
-Package license: GPL-3
+Package license: GPL-3.0-only
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Wrappers around the 'xml2' and 'httr' packages to make it easy to download, then manipulate, HTML and XML.
 
