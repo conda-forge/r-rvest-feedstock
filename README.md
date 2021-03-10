@@ -3,7 +3,7 @@ About r-rvest
 
 Home: http://rvest.tidyverse.org/, https://github.com/tidyverse/rvest
 
-Package license: GPL-3.0-only
+Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rvest-feedstock/blob/master/LICENSE.txt)
 
