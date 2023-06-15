@@ -1,11 +1,11 @@
-About r-rvest
-=============
+About r-rvest-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rvest-feedstock/blob/main/LICENSE.txt)
 
 Home: http://rvest.tidyverse.org/, https://github.com/tidyverse/rvest
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-rvest-feedstock/blob/main/LICENSE.txt)
 
 Summary: Wrappers around the 'xml2' and 'httr' packages to make it easy to download, then manipulate, HTML and XML.
 
